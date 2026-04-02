@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.125rem;
+
+    /* Dark navy theme (always dark) */
+    --background: 0.145 0.035 222;
+    --foreground: 0.97 0.01 220;
+    --card: 0.2 0.04 222;
+    --card-foreground: 0.97 0.01 220;
+    --popover: 0.2 0.04 222;
+    --popover-foreground: 0.97 0.01 220;
+    --primary: 0.68 0.18 42;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.22 0.05 222;
+    --secondary-foreground: 0.97 0.01 220;
+    --muted: 0.22 0.04 222;
+    --muted-foreground: 0.72 0.03 222;
+    --accent: 0.73 0.1 200;
+    --accent-foreground: 0.12 0.04 222;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.05 222;
+    --input: 0.2 0.04 222;
+    --ring: 0.73 0.1 200;
+
+    /* Custom tokens */
+    --cyan: 0.73 0.1 200;
+    --orange: 0.68 0.18 42;
+    --yellow: 0.85 0.15 85;
+    --navy-deep: 0.13 0.04 222;
+    --navy-card: 0.2 0.04 222;
+    --navy-surface: 0.24 0.05 222;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.73 0.1 200;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.2 0.04 222;
+    --sidebar-foreground: 0.97 0.01 220;
+    --sidebar-primary: 0.68 0.18 42;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.22 0.05 222;
+    --sidebar-accent-foreground: 0.97 0.01 220;
+    --sidebar-border: 0.28 0.05 222;
+    --sidebar-ring: 0.73 0.1 200;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background: linear-gradient(
+      160deg,
+      oklch(0.145 0.035 222) 0%,
+      oklch(0.11 0.03 222) 100%
+    );
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-cyan {
+    color: oklch(var(--cyan));
+  }
+  .text-orange {
+    color: oklch(var(--orange));
+  }
+  .text-yellow-rating {
+    color: oklch(var(--yellow));
+  }
+  .bg-cyan {
+    background-color: oklch(var(--cyan));
+  }
+  .bg-orange {
+    background-color: oklch(var(--orange));
+  }
+  .border-cyan {
+    border-color: oklch(var(--cyan));
+  }
+  .bg-navy-deep {
+    background-color: oklch(var(--navy-deep));
+  }
+  .bg-navy-card {
+    background-color: oklch(var(--navy-card));
+  }
+  .bg-navy-surface {
+    background-color: oklch(var(--navy-surface));
+  }
+  .card-glow {
+    border: 1px solid oklch(var(--cyan) / 0.35);
+    box-shadow: 0 0 20px oklch(var(--cyan) / 0.08), 0 8px 32px
+      rgba(0, 0, 0, 0.4);
+  }
+  .card-glow:hover {
+    border-color: oklch(var(--cyan) / 0.65);
+    box-shadow: 0 0 28px oklch(var(--cyan) / 0.18), 0 8px 40px
+      rgba(0, 0, 0, 0.5);
+  }
+  .btn-orange {
+    background-color: oklch(var(--orange));
+    color: white;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
+  .btn-orange:hover {
+    background-color: oklch(0.72 0.18 42);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px oklch(var(--orange) / 0.35);
+  }
+  .btn-secondary {
+    background-color: transparent;
+    border: 1.5px solid oklch(var(--cyan) / 0.5);
+    color: oklch(var(--foreground));
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    border-color: oklch(var(--cyan));
+    background-color: oklch(var(--cyan) / 0.08);
+  }
+  .input-dark {
+    background-color: oklch(0.18 0.04 222);
+    border: 1.5px solid oklch(var(--border));
+    color: oklch(var(--foreground));
+    border-radius: 0.625rem;
+    transition: border-color 0.2s ease;
+  }
+  .input-dark:focus {
+    outline: none;
+    border-color: oklch(var(--cyan));
+    box-shadow: 0 0 0 3px oklch(var(--cyan) / 0.12);
+  }
+  .section-title {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    color: oklch(var(--foreground));
+  }
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(0.97 0.01 220),
+      oklch(var(--cyan))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
