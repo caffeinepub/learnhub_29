@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnHub - Home</title>
+
+  <!-- ✅ Bootstrap 5 CSS via CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- ✅ Bootstrap Icons CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Custom hero background using Bootstrap utility + custom CSS */
+    .hero-section {
+      background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+    }
+
+    /* Card hover effect */
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: all 0.3s ease;
+    }
+
+    /* Smooth transition on all cards */
+    .course-card {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+    NAVBAR
+    Bootstrap feature: Navbar, Nav links, Toggler (hamburger menu),
+    Collapse (mobile menu), d-flex, ms-auto, bg-dark, navbar-dark
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+      <!-- Brand / Logo -->
+      <a class="navbar-brand fw-bold fs-4" href="index.html">
+        <i class="bi bi-mortarboard-fill text-primary me-2"></i>LearnHub
+      </a>
+
+      <!-- Hamburger toggle button for mobile screens -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible nav links -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <!-- Buttons in navbar -->
+        <a href="#" class="btn btn-outline-light ms-3">Log In</a>
+        <a href="#" class="btn btn-primary ms-2">Sign Up Free</a>
+      </div>
+
+    </div>
+  </nav>
+  <!-- END NAVBAR -->
+
+
+  <!-- ============================================================
+    HERO SECTION
+    Bootstrap feature: Container, Row, Col (Grid), text utilities,
+    button variants, py (padding), text-white, lead, display-4
+  ============================================================ -->
+  <section class="hero-section text-white py-5">
+    <div class="container py-4">
+      <div class="row align-items-center">
+
+        <!-- Left column: Heading + text + buttons -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <!-- Bootstrap Typography: display heading -->
+          <h1 class="display-4 fw-bold">Learn Without Limits</h1>
+
+          <!-- Bootstrap Typography: lead paragraph -->
+          <p class="lead mt-3">
+            Discover thousands of courses taught by expert instructors.
+            Build real-world skills and advance your career today.
+          </p>
+
+          <!-- Bootstrap Buttons: different variants -->
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="courses.html" class="btn btn-light btn-lg px-4">
+              <i class="bi bi-play-circle me-2"></i>Explore Courses
+            </a>
+            <a href="#" class="btn btn-outline-light btn-lg px-4">How It Works</a>
+          </div>
+
+          <!-- Bootstrap Badge -->
+          <div class="mt-4">
+            <span class="badge bg-warning text-dark me-2">⭐ 4.8 Rating</span>
+            <span class="badge bg-light text-dark me-2">50,000+ Students</span>
+            <span class="badge bg-light text-dark">200+ Courses</span>
+          </div>
+        </div>
+
+        <!-- Right column: Illustrative card -->
+        <div class="col-lg-6 text-center">
+          <!-- Bootstrap Card used inside hero -->
+          <div class="card border-0 shadow-lg p-4 text-dark">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">🎯 Start Learning Today</h5>
+              <p class="card-text text-muted">Join millions of students worldwide</p>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Self-paced courses</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Certificate on completion</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Expert instructors</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Lifetime access</li>
+              </ul>
+              <a href="courses.html" class="btn btn-primary w-100">Browse All Courses</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ============================================================
+    STATS BAR
+    Bootstrap feature: bg-light, py, text-center, row, col,
+    display-6, text-primary, fw-bold
+  ============================================================ -->
+  <section class="bg-light py-4">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3">
+          <div class="display-6 fw-bold text-primary">200+</div>
+          <p class="text-muted mb-0">Courses</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="display-6 fw-bold text-primary">50k+</div>
+          <p class="text-muted mb-0">Students</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="display-6 fw-bold text-primary">80+</div>
+          <p class="text-muted mb-0">Instructors</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="display-6 fw-bold text-primary">4.8★</div>
+          <p class="text-muted mb-0">Avg Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END STATS -->
+
+
+  <!-- ============================================================
+    FEATURED COURSES CAROUSEL
+    Bootstrap feature: Carousel, carousel-item, carousel-indicators,
+    carousel-control-prev/next, data-bs-ride
+  ============================================================ -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-2">Featured Courses</h2>
+      <p class="text-center text-muted mb-4">Hand-picked courses to get you started</p>
+
+      <!-- Bootstrap Carousel -->
+      <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Carousel indicators (dots at the bottom) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Carousel slides -->
+        <div class="carousel-inner rounded-4 shadow">
+
+          <div class="carousel-item active">
+            <div class="bg-primary text-white p-5 text-center" style="min-height:280px">
+              <h3 class="fw-bold">Web Development Bootcamp</h3>
+              <p class="lead">Learn HTML, CSS, JavaScript and build real projects from scratch.</p>
+              <span class="badge bg-warning text-dark me-2">Bestseller</span>
+              <span class="badge bg-light text-dark">42 Hours</span>
+              <br><br>
+              <a href="courses.html" class="btn btn-light mt-2">View Course</a>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="bg-success text-white p-5 text-center" style="min-height:280px">
+              <h3 class="fw-bold">Data Science & Machine Learning</h3>
+              <p class="lead">Master Python, Pandas, and build ML models with scikit-learn.</p>
+              <span class="badge bg-warning text-dark me-2">Hot</span>
+              <span class="badge bg-light text-dark">38 Hours</span>
+              <br><br>
+              <a href="courses.html" class="btn btn-light mt-2">View Course</a>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="bg-purple text-white p-5 text-center" style="min-height:280px; background:#6610f2">
+              <h3 class="fw-bold">UI/UX Design Masterclass</h3>
+              <p class="lead">Design stunning interfaces with Figma and modern design systems.</p>
+              <span class="badge bg-warning text-dark me-2">New</span>
+              <span class="badge bg-light text-dark">28 Hours</span>
+              <br><br>
+              <a href="courses.html" class="btn btn-light mt-2">View Course</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel prev/next controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CAROUSEL -->
+
+
+  <!-- ============================================================
+    CATEGORIES
+    Bootstrap feature: Row, Col, Card, Badge, g-3 (gutters),
+    text-bg-* color utilities, rounded, shadow-sm
+  ============================================================ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-2">Browse by Category</h2>
+      <p class="text-center text-muted mb-4">Find courses that match your interests</p>
+
+      <!-- Bootstrap Grid with gutters (g-3) -->
+      <div class="row g-3">
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">💻</div>
+              <div class="fw-semibold">Web Dev</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">📊</div>
+              <div class="fw-semibold">Data Science</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">🎨</div>
+              <div class="fw-semibold">UI/UX Design</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">📱</div>
+              <div class="fw-semibold">Mobile Dev</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">🤖</div>
+              <div class="fw-semibold">AI / ML</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="card text-center border-0 shadow-sm h-100 course-card">
+            <div class="card-body py-4">
+              <div class="fs-2 mb-2">🔐</div>
+              <div class="fw-semibold">Cybersecurity</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CATEGORIES -->
+
+
+  <!-- ============================================================
+    POPULAR COURSES GRID
+    Bootstrap feature: Card, card-img-top, card-footer,
+    row-cols-*, g-4 gutters, badge, text-truncate
+  ============================================================ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">Popular Courses</h2>
+        <a href="courses.html" class="btn btn-outline-primary">View All</a>
+      </div>
+
+      <!-- row-cols-1 / row-cols-md-2 / row-cols-lg-3 = responsive column count -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Course Card 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <!-- Card image with badge overlay -->
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/webdev/400/220" class="card-img-top" alt="Web Development" />
+              <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">Bestseller</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-primary mb-2">Web Development</span>
+              <h5 class="card-title">Complete Web Development Bootcamp</h5>
+              <p class="card-text text-muted small">HTML, CSS, JavaScript, React, Node.js and more in one complete course.</p>
+              <!-- Star rating using text -->
+              <div class="text-warning small mb-1">★★★★★ <span class="text-muted">4.9 (12,400 reviews)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary fs-5">$49.99</strong>
+              <!-- Button that triggers modal -->
+              <button
+                class="btn btn-sm btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#courseModal1"
+              >Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/datascience/400/220" class="card-img-top" alt="Data Science" />
+              <span class="badge bg-danger position-absolute top-0 start-0 m-2">Hot</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-success mb-2">Data Science</span>
+              <h5 class="card-title">Data Science & Machine Learning A-Z</h5>
+              <p class="card-text text-muted small">Master Python, NumPy, Pandas, Matplotlib, Scikit-Learn and more.</p>
+              <div class="text-warning small mb-1">★★★★★ <span class="text-muted">4.8 (9,200 reviews)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary fs-5">$44.99</strong>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal2">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/uiux/400/220" class="card-img-top" alt="UI/UX" />
+              <span class="badge bg-info text-dark position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-warning mb-2">UI/UX Design</span>
+              <h5 class="card-title">UI/UX Design Masterclass with Figma</h5>
+              <p class="card-text text-muted small">Design beautiful products with Figma, wireframes, prototypes and design systems.</p>
+              <div class="text-warning small mb-1">★★★★☆ <span class="text-muted">4.7 (6,800 reviews)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary fs-5">$39.99</strong>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal3">Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END POPULAR COURSES -->
+
+
+  <!-- ============================================================
+    TESTIMONIALS
+    Bootstrap feature: Card, blockquote, row, col, bg-light,
+    rounded-circle (avatar), shadow
+  ============================================================ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-2">What Our Students Say</h2>
+      <p class="text-center text-muted mb-4">Real reviews from real learners</p>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p class="fst-italic">&ldquo;LearnHub helped me land my first developer job. The courses are practical and well-structured!&rdquo;</p>
+                <footer class="blockquote-footer mt-2">
+                  <img src="https://i.pravatar.cc/40?img=1" class="rounded-circle me-2" alt="Student" />
+                  <strong>Sarah Johnson</strong>, Web Developer
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p class="fst-italic">&ldquo;The data science course exceeded my expectations. Highly recommend to anyone looking to switch careers.&rdquo;</p>
+                <footer class="blockquote-footer mt-2">
+                  <img src="https://i.pravatar.cc/40?img=3" class="rounded-circle me-2" alt="Student" />
+                  <strong>Mark Williams</strong>, Data Analyst
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p class="fst-italic">&ldquo;Amazing instructors and a very supportive community. I completed 3 courses in 2 months!&rdquo;</p>
+                <footer class="blockquote-footer mt-2">
+                  <img src="https://i.pravatar.cc/40?img=5" class="rounded-circle me-2" alt="Student" />
+                  <strong>Priya Patel</strong>, UI Designer
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END TESTIMONIALS -->
+
+
+  <!-- ============================================================
+    COURSE DETAIL MODALS
+    Bootstrap feature: Modal, modal-dialog, modal-header,
+    modal-body, modal-footer, data-bs-dismiss
+  ============================================================ -->
+
+  <!-- Modal 1: Web Dev -->
+  <div class="modal fade" id="courseModal1" tabindex="-1" aria-labelledby="courseModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="courseModal1Label">Complete Web Development Bootcamp</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://picsum.photos/seed/webdev/400/220" class="img-fluid rounded" alt="Web Dev" />
+            </div>
+            <div class="col-md-7">
+              <h6 class="fw-bold">What You'll Learn</h6>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2-circle text-success me-2"></i>HTML5 & CSS3 from scratch</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>JavaScript & ES6+</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>React.js & Node.js</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Build 10 real-world projects</li>
+              </ul>
+              <div class="d-flex gap-3 mt-3">
+                <span><i class="bi bi-clock me-1"></i>42 Hours</span>
+                <span><i class="bi bi-person me-1"></i>12,400 students</span>
+                <span><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="courses.html" class="btn btn-primary">Enroll Now – $49.99</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Data Science -->
+  <div class="modal fade" id="courseModal2" tabindex="-1" aria-labelledby="courseModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="courseModal2Label">Data Science & Machine Learning A-Z</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://picsum.photos/seed/datascience/400/220" class="img-fluid rounded" alt="Data Science" />
+            </div>
+            <div class="col-md-7">
+              <h6 class="fw-bold">What You'll Learn</h6>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Python & Pandas</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Data Visualisation</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Machine Learning models</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Real datasets & projects</li>
+              </ul>
+              <div class="d-flex gap-3 mt-3">
+                <span><i class="bi bi-clock me-1"></i>38 Hours</span>
+                <span><i class="bi bi-person me-1"></i>9,200 students</span>
+                <span><i class="bi bi-star-fill text-warning me-1"></i>4.8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="courses.html" class="btn btn-success">Enroll Now – $44.99</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: UI/UX -->
+  <div class="modal fade" id="courseModal3" tabindex="-1" aria-labelledby="courseModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background:#6610f2" class="text-white">
+          <h5 class="modal-title text-white" id="courseModal3Label">UI/UX Design Masterclass with Figma</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="https://picsum.photos/seed/uiux/400/220" class="img-fluid rounded" alt="UI/UX" />
+            </div>
+            <div class="col-md-7">
+              <h6 class="fw-bold">What You'll Learn</h6>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Figma from scratch</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Wireframing & Prototyping</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>Design Systems</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>User Research & Testing</li>
+              </ul>
+              <div class="d-flex gap-3 mt-3">
+                <span><i class="bi bi-clock me-1"></i>28 Hours</span>
+                <span><i class="bi bi-person me-1"></i>6,800 students</span>
+                <span><i class="bi bi-star-fill text-warning me-1"></i>4.7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="courses.html" class="btn btn-warning">Enroll Now – $39.99</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MODALS -->
+
+
+  <!-- ============================================================
+    CALL TO ACTION
+    Bootstrap feature: bg-primary, text-white, py, text-center,
+    container, btn-light, btn-outline-light
+  ============================================================ -->
+  <section class="bg-primary text-white py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold">Ready to Start Learning?</h2>
+      <p class="lead mb-4">Join over 50,000 students and start your journey today. First course is free!</p>
+      <a href="courses.html" class="btn btn-light btn-lg me-3">Explore Courses</a>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+    </div>
+  </section>
+  <!-- END CTA -->
+
+
+  <!-- ============================================================
+    FOOTER
+    Bootstrap feature: bg-dark, text-white, row, col-md-*,
+    list-unstyled, text-decoration-none, border-top, text-muted
+  ============================================================ -->
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Column 1: Brand -->
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-mortarboard-fill text-primary me-2"></i>LearnHub</h5>
+          <p class="text-muted">Empowering learners worldwide with quality online education.</p>
+          <!-- Social icons -->
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-muted fs-5"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-muted fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-muted fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-muted fs-5"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Links -->
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+            <li class="mb-1"><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+            <li class="mb-1"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+            <li class="mb-1"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Courses -->
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Courses</h6>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="courses.html" class="text-muted text-decoration-none">Web Dev</a></li>
+            <li class="mb-1"><a href="courses.html" class="text-muted text-decoration-none">Data Science</a></li>
+            <li class="mb-1"><a href="courses.html" class="text-muted text-decoration-none">UI/UX Design</a></li>
+            <li class="mb-1"><a href="courses.html" class="text-muted text-decoration-none">Mobile Dev</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Newsletter</h6>
+          <p class="text-muted small">Get the latest courses and offers delivered to your inbox.</p>
+          <!-- Bootstrap Input Group -->
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Your email" />
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <hr class="border-secondary mt-4" />
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="text-muted small mb-0">&copy; 2026 LearnHub. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted small text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-muted small text-decoration-none">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ✅ Bootstrap 5 JavaScript Bundle (includes Popper for dropdowns, modals, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

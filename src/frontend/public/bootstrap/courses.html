@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnHub - Courses</title>
+
+  <!-- ✅ Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- ✅ Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    .course-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+    NAVBAR (same on all pages)
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-mortarboard-fill text-primary me-2"></i>LearnHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn-outline-light ms-3">Log In</a>
+        <a href="#" class="btn btn-primary ms-2">Sign Up Free</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+    PAGE HEADER
+    Bootstrap feature: bg-primary, text-white, py, container,
+    Breadcrumb component
+  ============================================================ -->
+  <div class="bg-primary text-white py-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">All Courses</h1>
+      <!-- Bootstrap Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+          <li class="breadcrumb-item active text-white-50" aria-current="page">Courses</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+    FILTER BAR
+    Bootstrap feature: Nav pills, input-group, form-select,
+    d-flex, flex-wrap, gap
+  ============================================================ -->
+  <div class="bg-light border-bottom py-3">
+    <div class="container">
+      <div class="d-flex flex-wrap gap-3 align-items-center">
+
+        <!-- Search input -->
+        <div class="input-group" style="max-width:300px">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input type="text" class="form-control" placeholder="Search courses..." />
+        </div>
+
+        <!-- Category filter -->
+        <select class="form-select" style="max-width:180px">
+          <option selected>All Categories</option>
+          <option>Web Development</option>
+          <option>Data Science</option>
+          <option>UI/UX Design</option>
+          <option>Mobile Dev</option>
+          <option>Cybersecurity</option>
+        </select>
+
+        <!-- Level filter -->
+        <select class="form-select" style="max-width:160px">
+          <option selected>All Levels</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+
+        <!-- Nav pills for sort -->
+        <ul class="nav nav-pills ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Popular</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Newest</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Rating</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+    COURSES GRID
+    Bootstrap feature: Container, Row, Col, Card, card-img-top,
+    card-body, card-footer, badge, h-100, g-4, row-cols-*,
+    position-relative / position-absolute, shadow-sm
+  ============================================================ -->
+  <section class="py-5">
+    <div class="container">
+      <p class="text-muted mb-4">Showing <strong>8</strong> courses</p>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- ── Course 1 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/webdev/400/220" class="card-img-top" alt="Web Dev" />
+              <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2">Bestseller</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-primary mb-2">Web Development</span>
+              <span class="badge text-bg-light text-muted mb-2">Beginner</span>
+              <h5 class="card-title">Complete Web Development Bootcamp</h5>
+              <p class="card-text text-muted small">HTML, CSS, JS, React, Node.js — everything to become a full-stack developer.</p>
+              <div class="text-warning small">★★★★★ <span class="text-muted">4.9 (12,400)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-primary">$49.99</strong>
+                <small class="text-muted text-decoration-line-through ms-2">$129.99</small>
+              </div>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Course 2 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/datascience/400/220" class="card-img-top" alt="Data Science" />
+              <span class="badge bg-danger position-absolute top-0 start-0 m-2">Hot</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-success mb-2">Data Science</span>
+              <span class="badge text-bg-light text-muted mb-2">Intermediate</span>
+              <h5 class="card-title">Data Science & Machine Learning A-Z</h5>
+              <p class="card-text text-muted small">Python, Pandas, Matplotlib, Scikit-Learn and real-world data projects.</p>
+              <div class="text-warning small">★★★★★ <span class="text-muted">4.8 (9,200)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-primary">$44.99</strong>
+                <small class="text-muted text-decoration-line-through ms-2">$109.99</small>
+              </div>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Course 3 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <div class="position-relative">
+              <img src="https://picsum.photos/seed/uiux/400/220" class="card-img-top" alt="UI/UX" />
+              <span class="badge bg-info text-dark position-absolute top-0 start-0 m-2">New</span>
+            </div>
+            <div class="card-body">
+              <span class="badge text-bg-warning mb-2">UI/UX Design</span>
+              <span class="badge text-bg-light text-muted mb-2">Beginner</span>
+              <h5 class="card-title">UI/UX Design Masterclass with Figma</h5>
+              <p class="card-text text-muted small">Wireframes, prototypes, design systems and user research from scratch.</p>
+              <div class="text-warning small">★★★★☆ <span class="text-muted">4.7 (6,800)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="text-primary">$39.99</strong>
+                <small class="text-muted text-decoration-line-through ms-2">$89.99</small>
+              </div>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Course 4 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <img src="https://picsum.photos/seed/react/400/220" class="card-img-top" alt="React" />
+            <div class="card-body">
+              <span class="badge text-bg-primary mb-2">Web Development</span>
+              <span class="badge text-bg-light text-muted mb-2">Intermediate</span>
+              <h5 class="card-title">React – The Complete Guide</h5>
+              <p class="card-text text-muted small">Hooks, Context, Redux, React Router and building production-ready apps.</p>
+              <div class="text-warning small">★★★★★ <span class="text-muted">4.9 (18,000)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary">$54.99</strong>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Course 5 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <img src="https://picsum.photos/seed/python/400/220" class="card-img-top" alt="Python" />
+            <div class="card-body">
+              <span class="badge text-bg-success mb-2">Programming</span>
+              <span class="badge text-bg-light text-muted mb-2">Beginner</span>
+              <h5 class="card-title">Python for Everybody</h5>
+              <p class="card-text text-muted small">Learn Python 3 from scratch — variables, loops, functions, OOP and more.</p>
+              <div class="text-warning small">★★★★★ <span class="text-muted">4.8 (21,000)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary">$34.99</strong>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Course 6 ── -->
+        <div class="col">
+          <div class="card h-100 shadow-sm course-card">
+            <img src="https://picsum.photos/seed/mobile/400/220" class="card-img-top" alt="Mobile" />
+            <div class="card-body">
+              <span class="badge text-bg-danger mb-2">Mobile Dev</span>
+              <span class="badge text-bg-light text-muted mb-2">Intermediate</span>
+              <h5 class="card-title">Flutter & Dart – Build iOS & Android Apps</h5>
+              <p class="card-text text-muted small">Cross-platform mobile apps with Flutter, Dart, Firebase and real projects.</p>
+              <div class="text-warning small">★★★★☆ <span class="text-muted">4.6 (5,400)</span></div>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+              <strong class="text-primary">$44.99</strong>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal6">Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ============================================================
+        PAGINATION
+        Bootstrap feature: Pagination component, page-item, page-link,
+        disabled, active
+      ============================================================ -->
+      <nav aria-label="Course pages" class="mt-5 d-flex justify-content-center">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#">« Prev</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next »</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    COURSE DETAIL MODALS
+  ============================================================ -->
+
+  <!-- Modal 1 -->
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Complete Web Development Bootcamp</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-5"><img src="https://picsum.photos/seed/webdev/400/220" class="img-fluid rounded" alt="" /></div>
+            <div class="col-md-7">
+              <h6 class="fw-bold">Course Overview</h6>
+              <p class="text-muted small">This comprehensive course takes you from zero to full-stack developer. You'll build 10 real-world projects.</p>
+              <h6 class="fw-bold">What You'll Learn</h6>
+              <ul class="list-unstyled small">
+                <li>✅ HTML5, CSS3, Flexbox, Grid</li>
+                <li>✅ JavaScript & ES6+</li>
+                <li>✅ React.js & Node.js</li>
+                <li>✅ MongoDB & REST APIs</li>
+                <li>✅ Git & Deployment</li>
+              </ul>
+              <!-- Progress bar showing curriculum completion -->
+              <h6 class="fw-bold">Curriculum Progress</h6>
+              <div class="progress mb-1" style="height:8px">
+                <div class="progress-bar bg-primary" style="width:100%"></div>
+              </div>
+              <small class="text-muted">42 hours • 320 lessons • Certificate included</small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary">Enroll Now – $49.99</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Data Science & Machine Learning A-Z</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-5"><img src="https://picsum.photos/seed/datascience/400/220" class="img-fluid rounded" alt="" /></div>
+            <div class="col-md-7">
+              <h6 class="fw-bold">Course Overview</h6>
+              <p class="text-muted small">Master data science with Python. Work on real datasets and deploy ML models.</p>
+              <h6 class="fw-bold">What You'll Learn</h6>
+              <ul class="list-unstyled small">
+                <li>✅ Python & Pandas</li>
+                <li>✅ Data Visualisation with Matplotlib</li>
+                <li>✅ Supervised & Unsupervised ML</li>
+                <li>✅ Neural Networks & Deep Learning</li>
+                <li>✅ Model Deployment</li>
+              </ul>
+              <div class="progress mb-1" style="height:8px">
+                <div class="progress-bar bg-success" style="width:95%"></div>
+              </div>
+              <small class="text-muted">38 hours • 280 lessons • Certificate included</small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success">Enroll Now – $44.99</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title">UI/UX Design Masterclass with Figma</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-5"><img src="https://picsum.photos/seed/uiux/400/220" class="img-fluid rounded" alt="" /></div>
+            <div class="col-md-7">
+              <ul class="list-unstyled small">
+                <li>✅ Figma from scratch</li>
+                <li>✅ Wireframing & Prototyping</li>
+                <li>✅ Design Systems</li>
+                <li>✅ Usability Testing</li>
+              </ul>
+              <small class="text-muted">28 hours • 200 lessons</small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-warning">Enroll Now – $39.99</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals 4-6 (simplified) -->
+  <div class="modal fade" id="modal4" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">React – The Complete Guide</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Hooks, Redux, React Router and building production-ready apps. 48 hrs • Advanced.</div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button class="btn btn-primary">Enroll – $54.99</button></div></div></div></div>
+  <div class="modal fade" id="modal5" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Python for Everybody</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Python 3 from scratch. Variables, loops, functions, OOP. 30 hrs • Beginner.</div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button class="btn btn-success">Enroll – $34.99</button></div></div></div></div>
+  <div class="modal fade" id="modal6" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Flutter & Dart</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Cross-platform mobile apps with Flutter and Firebase. 35 hrs • Intermediate.</div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button class="btn btn-danger">Enroll – $44.99</button></div></div></div></div>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-5 pb-3 mt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4"><h5 class="fw-bold"><i class="bi bi-mortarboard-fill text-primary me-2"></i>LearnHub</h5><p class="text-muted">Empowering learners worldwide.</p></div>
+        <div class="col-md-2"><h6 class="fw-bold">Pages</h6><ul class="list-unstyled"><li><a href="index.html" class="text-muted text-decoration-none">Home</a></li><li><a href="about.html" class="text-muted text-decoration-none">About</a></li><li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li></ul></div>
+        <div class="col-md-4"><h6 class="fw-bold">Newsletter</h6><div class="input-group"><input type="email" class="form-control" placeholder="Your email" /><button class="btn btn-primary">Subscribe</button></div></div>
+      </div>
+      <hr class="border-secondary" />
+      <p class="text-muted small text-center mb-0">&copy; 2026 LearnHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
